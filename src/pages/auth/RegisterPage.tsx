@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { userApi } from "../../api/user";
+import { Button } from "../../components/ui/Button";
 
 export const RegisterPage = () => {
   const [email, setEmail] = useState("");
@@ -18,15 +19,13 @@ export const RegisterPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="max-w-md w-full space-y-8">
+    <div className="">
+      <div className="">
         <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            회원가입
-          </h2>
+          <h2 className="">회원가입</h2>
         </div>
-        <div className="bg-white p-8 rounded-lg shadow">
-          <p className="text-center text-gray-600">
+        <div className="">
+          <p className="">
             회원가입 페이지 컴포넌트가 여기에 구현됩니다.
             <input
               type="email"
@@ -52,7 +51,9 @@ export const RegisterPage = () => {
               onChange={(e) => setPasswordConfirm(e.target.value)}
               placeholder="비밀번호 확인"
             />
-            <button onClick={handleRegister}>회원가입</button>
+            <Button type="register" onClick={handleRegister}>
+              회원가입
+            </Button>
           </p>
         </div>
       </div>

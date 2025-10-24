@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { authApi } from "../../api/auth";
 import { ROUTES } from "../../utils/constants";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { Logo } from "../../components/ui/Logo";
 
 export const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -19,16 +20,17 @@ export const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="max-w-md w-full space-y-8">
+    <div className="">
+      <div className="">
         <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            로그인
-          </h2>
+          <Logo />
+          <p className="logo-description">
+            Enterprise Project Management Solution
+          </p>
+          <h2 className="">로그인</h2>
         </div>
-        <div className="bg-white p-8 rounded-lg shadow">
-          <p className="text-center text-gray-600">
-            로그인 페이지 컴포넌트가 여기에 구현됩니다.
+        <div className="">
+          <p className="">
             <input
               type="email"
               value={email}
@@ -41,6 +43,10 @@ export const LoginPage = () => {
             />
             <button onClick={handleLogin}>로그인</button>
           </p>
+        </div>
+        <div>
+          아직 계정이 없으신가요?
+          <Link to={ROUTES.SIGNUP}>회원가입</Link>
         </div>
       </div>
     </div>
