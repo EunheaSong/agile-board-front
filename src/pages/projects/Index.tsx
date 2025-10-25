@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "../../components/ui/Button";
 import { CreateModal } from "./components/CreateModal";
+
 export const ProjectsPage = () => {
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
 

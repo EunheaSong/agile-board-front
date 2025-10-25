@@ -84,8 +84,8 @@
   --border-color: #4a4a4a; /* 테두리 회색 */
 
   /* 다크 모드에서 더 밝은 파란색 */
-  --color-primary: #4a9eff; /* 더 밝은 파란색 */
-  --color-primary-hover: #2f78c4; /* 원래 파란색 */
+  --color-primary: #2f78c4; /* 더 밝은 파란색 */
+  --color-primary-hover: #348de7; /* 원래 파란색 */
   --color-primary-light: #e6f2ff; /* 파란색 라이트 */
 
   /* 다크 모드 그림자 */

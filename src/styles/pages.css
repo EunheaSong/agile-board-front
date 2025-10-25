@@ -8,7 +8,7 @@
 
 .main-content {
   flex: 1;
-  padding: var(--spacing-md);
+  /* padding: var(--spacing-md); */
 }
 
 /* 인증 페이지 스타일 */
@@ -207,6 +207,31 @@ textarea.form-input-light:not(:placeholder-shown) + .form-label {
   margin: 0 auto;
   background-color: var(--bg-primary);
   min-height: calc(100vh - 120px);
+}
+
+/* 프로젝트 상세 페이지 스타일 */
+.project-detail-page {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+}
+
+.project-detail-content {
+  flex: 1;
+  padding: var(--spacing-xl);
+  background-color: var(--bg-primary);
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.project-detail-header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.project-detail-title {
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: 0;
 }
 
 .projects-header {
