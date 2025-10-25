@@ -1,0 +1,116 @@
+/* 기본 버튼 스타일 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  min-width: 100px;
+  min-height: 40px;
+}
+
+.btn:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 버튼 타입별 스타일 */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+}
+
+.btn-register {
+  background-color: var(--color-register);
+  color: var(--color-white);
+}
+
+.btn-register:hover:not(:disabled) {
+  background-color: var(--color-register-hover);
+}
+
+.btn-cancel {
+  background-color: var(--color-cancel);
+  color: var(--color-white);
+}
+
+.btn-cancel:hover:not(:disabled) {
+  background-color: var(--color-cancel-hover);
+}
+
+.btn-delete {
+  background-color: var(--color-delete);
+  color: var(--color-white);
+}
+
+.btn-delete:hover:not(:disabled) {
+  background-color: var(--color-delete-hover);
+}
+
+/* 심플한 로고 스타일 */
+.logo-simple {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.logo-icon-simple {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-square-simple {
+  width: 14px;
+  height: 14px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+}
+
+.logo-circle-simple {
+  width: 14px;
+  height: 14px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+}
+
+.logo-text-simple {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.logo-company-simple {
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-700);
+  line-height: 1;
+}
+
+.logo-product-simple {
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  line-height: 1;
+}

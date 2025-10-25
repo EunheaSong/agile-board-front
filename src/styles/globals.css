@@ -1,0 +1,82 @@
+/* 전역 CSS 변수 정의 */
+:root {
+  /* 폰트 설정 */
+  font-family: "Noto Sans KR", sans-serif;
+  --font-size-base: 15px;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* 메인 컬러 */
+  --color-primary: #3b82f6; /* 파란색 */
+  --color-primary-hover: #2563eb; /* 파란색 호버 */
+  --color-primary-light: #dbeafe; /* 파란색 라이트 */
+
+  /* 등록 컬러 */
+  --color-register: #3b82f6; /* 파란색 */
+  --color-register-hover: #2563eb; /* 파란색 호버 */
+  --color-register-light: #dbeafe; /* 파란색 라이트 */
+
+  /* 취소 컬러 */
+  --color-cancel: #6b7280; /* 회색 */
+  --color-cancel-hover: #4b5563; /* 회색 호버 */
+  --color-cancel-light: #f3f4f6; /* 회색 라이트 */
+
+  /* 삭제 컬러 */
+  --color-delete: #ef4444; /* 빨간색 */
+  --color-delete-hover: #dc2626; /* 빨간색 호버 */
+  --color-delete-light: #fecaca; /* 빨간색 라이트 */
+
+  /* 중성 컬러 */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  /* 간격 */
+  --spacing-xs: 0.25rem; /* 4px */
+  --spacing-sm: 0.5rem; /* 8px */
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 1.5rem; /* 24px */
+  --spacing-xl: 2rem; /* 32px */
+  --spacing-2xl: 3rem; /* 48px */
+
+  /* 보더 반경 */
+  --radius-sm: 0.25rem; /* 4px */
+  --radius-md: 0.5rem; /* 8px */
+  --radius-lg: 0.75rem; /* 12px */
+  --radius-xl: 1rem; /* 16px */
+
+  /* 그림자 */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* 기본 스타일 리셋 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.5;
+  color: var(--color-gray-800);
+  background-color: var(--color-gray-50);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
