@@ -3,6 +3,7 @@ import App from "../App";
 import { LoginPage } from "../pages/auth/LoginPage";
 import { RegisterPage } from "../pages/auth/RegisterPage";
 import { ROUTES } from "../utils/constants";
+import { ProjectsPage } from "../pages/projects/Index";
 
 export const router = createBrowserRouter([
   {
@@ -14,8 +15,8 @@ export const router = createBrowserRouter([
         element: <div className="p-8 text-center">메인 대시보드 페이지</div>,
       },
       {
-        path: "dashboard",
-        element: <div className="p-8 text-center">대시보드 페이지</div>,
+        path: "projects",
+        element: <ProjectsPage />,
       },
       {
         path: "analytics",
