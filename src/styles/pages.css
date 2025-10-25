@@ -598,6 +598,7 @@ textarea.form-input-light:not(:placeholder-shown) + .form-label {
   min-width: 0;
   overflow: visible;
   width: max-content;
+  min-width: calc(12 * 120px); /* 최소 12개월 너비 보장 */
 }
 
 .epic-bar {
