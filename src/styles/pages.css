@@ -351,6 +351,104 @@ textarea.form-input-light:not(:placeholder-shown) + .form-label {
   align-items: center;
 }
 
+.create-project-form {
+  width: 500px;
+}
+
+/* 이슈 생성 폼 스타일 */
+.issue-create-form {
+  width: 800px;
+  max-width: 90vw;
+}
+
+.issue-form-content {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.issue-main-content {
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.issue-sidebar {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.form-label-text {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.form-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+}
+
+.form-input {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: border-color 0.2s ease-in-out;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.form-textarea {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  resize: vertical;
+  min-height: 200px;
+  font-family: inherit;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.form-select {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
 .create-project-btn {
   background-color: #2f78c4;
   color: var(--color-white);
@@ -632,6 +730,130 @@ textarea.form-input-light:not(:placeholder-shown) + .form-label {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/* Board 페이지 스타일 */
+.board-container {
+  padding: var(--spacing-md);
+  margin: 0 auto;
+  background-color: var(--bg-primary);
+}
+
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.kanban-board {
+  display: flex;
+  gap: var(--spacing-lg);
+  min-height: 70vh;
+}
+
+.kanban-board-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+.kanban-board-content {
+  background-color: var(--bg-secondary);
+  border-radius: 12px; /* 직접 값 적용 */
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* 둥근 모서리를 위해 추가 */
+}
+
+.kanban-board-content-header {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-tertiary);
+  border-radius: 12px 12px 0 0; /* 직접 값 적용 */
+}
+
+.kanban-board-content-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.kanban-board-content-body {
+  padding: var(--spacing-md);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  overflow-y: auto;
+  border-radius: 0 0 12px 12px; /* 직접 값 적용 */
+}
+
+.kanban-board-content-body-item {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.kanban-board-content-body-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+}
+
+.kanban-board-content-body-item h4 {
+  margin: 0 0 var(--spacing-xs) 0;
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+}
+
+.kanban-board-content-body-item p {
+  margin: 0 0 var(--spacing-xs) 0;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.kanban-board-content-body-item span {
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+  margin-right: var(--spacing-xs);
+}
+
+.kanban-board-content-body-item-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 우선순위 선 스타일 */
+.priority-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-right: var(--spacing-xs);
+}
+
+.priority-lines .line {
+  width: 16px;
+  height: 3px;
+  border-radius: 1px;
+}
+
+.priority-high .line {
+  background-color: #ef4444; /* 빨간색 - 높은 우선순위 */
+}
+
+.priority-medium .line {
+  background-color: #f59e0b; /* 노란색 - 중간 우선순위 */
+}
+
+.priority-low .line {
+  background-color: #10b981; /* 초록색 - 낮은 우선순위 */
 }
 
 /* 반응형 디자인 */

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "../../components/ui/Button";
 import { CreateModal } from "./components/CreateModal";
 import { routes } from "../../router/routes";
+import { SearchInput } from "../../components/ui/SearchInput";
 
 export const ProjectsPage = () => {
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
@@ -25,29 +26,7 @@ export const ProjectsPage = () => {
       <div className="projects-header">
         <div className="projects-title-section">
           <h1 className="projects-title">프로젝트 목록</h1>
-          <div className="search-container">
-            <div className="search-input-wrapper">
-              <svg
-                className="search-icon"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <circle cx="11" cy="11" r="8"></circle>
-                <path d="m21 21-4.35-4.35"></path>
-              </svg>
-              <input
-                type="text"
-                placeholder="검색어를 입력하세요"
-                className="search-input"
-              />
-            </div>
-          </div>
+          <SearchInput />
         </div>
         <div className="create-button-container">
           <Button

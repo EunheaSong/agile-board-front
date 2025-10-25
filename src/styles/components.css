@@ -357,8 +357,8 @@
   background-color: var(--bg-secondary);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
-  max-width: 500px;
-  width: 90%;
+  max-width: 90%;
+  width: max-content;
   max-height: 80vh;
   overflow-y: auto;
   animation: slideIn 0.2s ease-in-out;
@@ -399,7 +399,7 @@
 
 .modal-actions {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   gap: var(--spacing-md);
   margin-top: var(--spacing-lg);
   padding-top: var(--spacing-lg);
@@ -459,8 +459,8 @@
 
 .thumbnail-preview {
   position: relative;
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid var(--border-color);
@@ -566,6 +566,7 @@
   justify-content: center;
   transition: all 0.2s ease-in-out;
   color: var(--text-primary);
+  z-index: 3;
 }
 
 .sidebar-collapse-btn:hover {
