@@ -2,7 +2,7 @@ import { useState } from "react";
 import { authApi } from "../../api/auth";
 import { ROUTES } from "../../utils/constants";
 import { Link, useNavigate } from "react-router-dom";
-import { Logo } from "../../components/ui/Logo";
+import { AuthPage } from "./AuthPage";
 
 export const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -11,44 +11,56 @@ export const LoginPage = () => {
   const navigate = useNavigate();
 
   const handleLogin = async () => {
-    const response = await authApi.login({ email, password });
+    try {
+      const response = await authApi.login({ email, password });
 
-    if (response.token) {
-      localStorage.setItem("token", response.token);
-      navigate(ROUTES.HOME);
+      if (response.token) {
+        localStorage.setItem("token", response.token);
+        navigate(ROUTES.HOME);
+      }
+    } catch (error) {
+      console.error("로그인 실패:", error);
     }
   };
 
+  const footer = (
+    <p className="text-gray-600">
+      아직 계정이 없으신가요?{" "}
+      <Link to={ROUTES.SIGNUP} className="text-primary font-semibold">
+        회원가입
+      </Link>
+    </p>
+  );
+
   return (
-    <div className="">
-      <div className="">
-        <div>
-          <Logo />
-          <p className="logo-description">
-            Enterprise Project Management Solution
-          </p>
-          <h2 className="">로그인</h2>
-        </div>
-        <div className="">
-          <p className="">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <button onClick={handleLogin}>로그인</button>
-          </p>
-        </div>
-        <div>
-          아직 계정이 없으신가요?
-          <Link to={ROUTES.SIGNUP}>회원가입</Link>
-        </div>
+    <AuthPage
+      title="로그인"
+      // description="Enterprise Project Management Solution"
+      footer={footer}
+    >
+      <div className="form-group">
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder=" "
+          className="form-input-light"
+        />
+        <label className="form-label">이메일</label>
       </div>
-    </div>
+      <div className="form-group">
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder=" "
+          className="form-input-light"
+        />
+        <label className="form-label">비밀번호</label>
+      </div>
+      <button onClick={handleLogin} className="btn btn-primary w-full">
+        로그인
+      </button>
+    </AuthPage>
   );
 };

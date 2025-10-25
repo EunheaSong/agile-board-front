@@ -70,7 +70,7 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-md);
+  margin: var(--spacing-sm);
 }
 
 .logo-icon-simple {
@@ -98,19 +98,75 @@
 .logo-text-simple {
   display: flex;
   flex-direction: column;
-  gap: 1px;
+  align-items: flex-start;
 }
 
 .logo-company-simple {
   font-size: 1.125rem;
   font-weight: var(--font-weight-semibold);
-  color: var(--color-gray-700);
+  color: var(--text-secondary);
   line-height: 1;
 }
 
 .logo-product-simple {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: var(--font-weight-bold);
   color: var(--color-primary);
   line-height: 1;
+}
+
+/* 다크모드 토글 버튼 */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: var(--shadow-sm);
+}
+
+.theme-toggle:hover {
+  background-color: var(--bg-tertiary);
+  transform: scale(1.05);
+}
+
+.theme-toggle:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.theme-toggle svg {
+  transition: transform 0.2s ease-in-out;
+}
+
+.theme-toggle:hover svg {
+  transform: rotate(15deg);
+}
+
+/* 헤더 스타일 */
+.header {
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) var(--spacing-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
 }

@@ -2,19 +2,37 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import { LoginPage } from "../pages/auth/LoginPage";
 import { RegisterPage } from "../pages/auth/RegisterPage";
+import { ROUTES } from "../utils/constants";
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: ROUTES.HOME,
     element: <App />,
-    children: [],
+    children: [
+      {
+        index: true,
+        element: <div className="p-8 text-center">메인 대시보드 페이지</div>,
+      },
+      {
+        path: "dashboard",
+        element: <div className="p-8 text-center">대시보드 페이지</div>,
+      },
+      {
+        path: "analytics",
+        element: <div className="p-8 text-center">분석 페이지</div>,
+      },
+      {
+        path: "settings",
+        element: <div className="p-8 text-center">설정 페이지</div>,
+      },
+    ],
   },
   {
-    path: "/signin",
+    path: ROUTES.SIGNIN,
     element: <LoginPage />,
   },
   {
-    path: "/signup",
+    path: ROUTES.SIGNUP,
     element: <RegisterPage />,
   },
 ]);
