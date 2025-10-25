@@ -1,19 +1,26 @@
 import { useState } from "react";
 import { NavButton } from "../../../components/ui/NavButton";
+import { Avatar } from "../../../components/ui/Avatar";
 import { routes } from "../../../router/routes";
+import { useLocation } from "react-router-dom";
 
 interface SidebarProps {
   projectId?: string;
   projectName?: string;
-  activeItem?: string;
 }
 
 export const Sidebar = ({
   projectId = "1",
   projectName = "Project name",
-  activeItem = "roadmap",
 }: SidebarProps) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const location = useLocation();
+
+  // URL 기반으로 활성 상태 확인
+  const isItemActive = (itemId: string) => {
+    const path = location.pathname;
+    return path.includes(`/${itemId}`);
+  };
 
   const navigationItems = [
     {
@@ -206,9 +213,7 @@ export const Sidebar = ({
       {/* 프로젝트 헤더 */}
       <div className="sidebar-header">
         <div className="project-info">
-          <div className="project-icon">
-            <div className="project-icon-placeholder"></div>
-          </div>
+          <Avatar size={32} />
           <span className="project-name">{projectName}</span>
         </div>
         {/* <div className="sidebar-separator"></div> */}
@@ -237,7 +242,7 @@ export const Sidebar = ({
       {/* 네비게이션 메뉴 */}
       <div className="sidebar-navigation">
         {navigationItems.map((item) => {
-          const isActive = activeItem === item.id;
+          const isActive = isItemActive(item.id);
           const routeMap = {
             roadmap: routes.roadmap(projectId),
             board: routes.board(projectId),

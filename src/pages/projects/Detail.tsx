@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Sidebar } from "./components/Sidebar";
 import { Outlet, useParams, useLocation } from "react-router-dom";
 
@@ -6,16 +5,15 @@ export const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
   const location = useLocation();
 
-  // 현재 경로에서 activeItem 결정
-  const getActiveItem = () => {
+  const getPageTitle = () => {
     const path = location.pathname;
-    if (path.includes("/roadmap")) return "roadmap";
-    if (path.includes("/board")) return "board";
-    if (path.includes("/calendar")) return "calendar";
-    if (path.includes("/issues")) return "issues";
-    if (path.includes("/release")) return "release";
-    if (path.includes("/backlog")) return "backlog";
-    return "roadmap"; // 기본값
+    if (path.includes("/roadmap")) return "로드맵";
+    if (path.includes("/board")) return "칸반 보드";
+    if (path.includes("/calendar")) return "캘린더";
+    if (path.includes("/issues")) return "이슈";
+    if (path.includes("/release")) return "릴리즈";
+    if (path.includes("/backlog")) return "백로그";
+    return "로드맵"; // 기본값
   };
 
   // const [projectName, setProjectName] = useState("AgileBoard Web App");
@@ -33,15 +31,10 @@ export const ProjectDetailPage = () => {
 
   return (
     <div className="project-detail-page">
-      <Sidebar
-        projectId={id}
-        projectName="AgileBoard Web App"
-        activeItem={getActiveItem()}
-      />
+      <Sidebar projectId={id} projectName="AgileBoard Web App" />
       <div className="project-detail-content">
-        <div className="project-detail-header">
-          <Outlet />
-        </div>
+        <div className="project-detail-header">{getPageTitle()}</div>
+        <Outlet />
       </div>
     </div>
   );

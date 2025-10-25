@@ -272,10 +272,12 @@ textarea.form-input-light:not(:placeholder-shown) + .form-label {
   padding: var(--spacing-xl);
   background-color: var(--bg-primary);
   transition: margin-left 0.3s ease-in-out;
+  overflow-y: auto;
+  height: var(--content-height);
 }
 
 .project-detail-header {
-  margin-bottom: var(--spacing-xl);
+  /* margin-bottom: var(--spacing-xl); */
 }
 
 .project-detail-title {
@@ -456,4 +458,216 @@ textarea.form-input-light:not(:placeholder-shown) + .form-label {
   color: var(--color-gray-600);
   text-align: center;
   margin-bottom: var(--spacing-lg);
+}
+
+/* 로드맵 페이지 스타일 */
+.roadmap-page {
+  padding: 0 var(--spacing-lg);
+  max-width: 100%;
+  margin: 0 auto;
+  height: calc(100vh - 173px); /* 헤더 높이 제외 */
+  display: flex;
+  flex-direction: column;
+}
+
+/* 가로 타임라인 컨테이너 */
+.timeline-container {
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--border-color);
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  flex: 1; /* 남은 공간을 모두 사용 */
+}
+
+/* 타임라인 헤더 */
+.timeline-header {
+  display: flex;
+  background-color: var(--bg-tertiary);
+  border-bottom: 2px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  width: max-content;
+  min-width: 100%;
+}
+
+.timeline-labels {
+  width: 200px;
+  min-width: 200px;
+  padding: var(--spacing-md);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-tertiary);
+  flex-shrink: 0;
+  position: sticky;
+  left: 0;
+  z-index: 21;
+}
+
+.epic-label-header {
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+}
+
+.timeline-dates-scrollable {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+}
+
+.timeline-date {
+  height: 40px;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  min-width: 120px;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  font-weight: var(--font-weight-semibold);
+  flex-shrink: 0;
+}
+
+.date-label {
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+}
+
+/* 타임라인 콘텐츠 */
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  min-width: 100%;
+}
+
+.epic-row {
+  display: flex;
+  min-height: 60px;
+  border-bottom: 1px solid var(--border-color);
+  width: max-content;
+  min-width: 100%;
+}
+
+.epic-row:last-child {
+  border-bottom: none;
+}
+
+.epic-info {
+  width: 200px;
+  min-width: 200px;
+  padding: var(--spacing-md);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--bg-secondary);
+  flex-shrink: 0;
+  position: sticky;
+  left: 0;
+  z-index: 10;
+}
+
+.epic-name {
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.epic-assignee {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.epic-timeline-scrollable {
+  position: relative;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  overflow: visible;
+  width: max-content;
+}
+
+.epic-bar {
+  position: relative;
+  height: 32px;
+  border-radius: var(--border-radius-md);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--spacing-sm);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease-in-out;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.epic-bar:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.epic-bar-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.epic-bar-text {
+  color: white;
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .roadmap-page {
+    padding: var(--spacing-sm);
+  }
+
+  .timeline-labels {
+    width: 120px;
+    min-width: 120px;
+  }
+
+  .epic-info {
+    width: 120px;
+    min-width: 120px;
+  }
+
+  .epic-name {
+    font-size: 0.75rem;
+  }
+
+  .epic-assignee {
+    font-size: 0.625rem;
+  }
+
+  .timeline-date {
+    width: 80px;
+    min-width: 80px;
+    font-size: 0.75rem;
+  }
+
+  .epic-bar-text {
+    font-size: 0.625rem;
+  }
+
+  .project-detail-content {
+    padding: var(--spacing-md);
+  }
 }

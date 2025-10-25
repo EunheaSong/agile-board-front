@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Modal } from "../../../components/ui/Modal";
 import { Button } from "../../../components/ui/Button";
+import { Avatar } from "../../../components/ui/Avatar";
 
 interface CreateModalProps {
   isOpen: boolean;
@@ -41,7 +42,7 @@ export const CreateModal = ({
           <div className="thumbnail-upload-container">
             {previewUrl ? (
               <div className="thumbnail-preview">
-                <img src={previewUrl} alt="프로젝트 썸네일" />
+                <Avatar src={previewUrl} alt="프로젝트 썸네일" size={100} />
                 <button
                   type="button"
                   className="thumbnail-remove"
@@ -59,21 +60,7 @@ export const CreateModal = ({
                   onChange={handleFileChange}
                   className="thumbnail-input"
                 />
-                <div className="thumbnail-upload-content">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
-                    <circle cx="12" cy="13" r="3" />
-                  </svg>
-                </div>
+                <Avatar size={100} />
               </label>
             )}
           </div>
