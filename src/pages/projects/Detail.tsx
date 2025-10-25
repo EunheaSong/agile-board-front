@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { Sidebar } from "./components/Sidebar";
-import { Outlet, useParams, useNavigate, useLocation } from "react-router-dom";
-import { routes } from "../../router/routes";
+import { Outlet, useParams, useLocation } from "react-router-dom";
 
 export const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
   const location = useLocation();
 
   // 현재 경로에서 activeItem 결정
@@ -20,30 +18,25 @@ export const ProjectDetailPage = () => {
     return "roadmap"; // 기본값
   };
 
-  const handleNavItemClick = (itemId: string) => {
-    if (!id) return;
+  // const [projectName, setProjectName] = useState("AgileBoard Web App");
 
-    const routeMap = {
-      roadmap: routes.roadmap(id),
-      board: routes.board(id),
-      calendar: routes.calendar(id),
-      issues: routes.issues(id),
-      release: routes.release(id),
-      backlog: routes.backlog(id),
-    };
+  // TODO : GET project name from API
+  // const getProjectName = async () => {
+  //    TODO : projectId 를 가지고 백엔드에서 project 정보를 가져옴.
+  // };
 
-    const route = routeMap[itemId as keyof typeof routeMap];
-    if (route) {
-      navigate(route);
-    }
-  };
+  // useEffect(() => {
+  //   getProjectName().then((name) => {
+  //     setProjectName(name);
+  //   });
+  // }, [id]);
 
   return (
     <div className="project-detail-page">
       <Sidebar
+        projectId={id}
         projectName="AgileBoard Web App"
         activeItem={getActiveItem()}
-        onItemClick={handleNavItemClick}
       />
       <div className="project-detail-content">
         <div className="project-detail-header">

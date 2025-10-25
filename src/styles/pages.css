@@ -250,6 +250,7 @@ textarea.form-input-light:not(:placeholder-shown) + .form-label {
 /* Projects 페이지 스타일 */
 .projects-page {
   padding: var(--spacing-xl);
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   background-color: var(--bg-primary);

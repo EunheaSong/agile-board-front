@@ -1,5 +1,7 @@
 import { Logo } from "../ui/Logo";
 import { ThemeToggle } from "../ui/ThemeToggle";
+import { NavButton } from "../ui/NavButton";
+import { routes } from "../../router/routes";
 
 // 헤더 컴포넌트
 export const Header = () => {
@@ -7,6 +9,9 @@ export const Header = () => {
     <header className="header">
       <div className="header-content">
         <Logo />
+        <div className="header-nav">
+          <NavButton to={routes.projects()}>Projects</NavButton>
+        </div>
         <div className="header-actions">
           <ThemeToggle />
         </div>

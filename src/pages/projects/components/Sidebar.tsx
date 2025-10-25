@@ -1,15 +1,17 @@
 import { useState } from "react";
+import { NavButton } from "../../../components/ui/NavButton";
+import { routes } from "../../../router/routes";
 
 interface SidebarProps {
+  projectId?: string;
   projectName?: string;
   activeItem?: string;
-  onItemClick?: (item: string) => void;
 }
 
 export const Sidebar = ({
+  projectId = "1",
   projectName = "Project name",
   activeItem = "roadmap",
-  onItemClick,
 }: SidebarProps) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
@@ -199,12 +201,6 @@ export const Sidebar = ({
     },
   ];
 
-  const handleItemClick = (itemId: string) => {
-    if (onItemClick) {
-      onItemClick(itemId);
-    }
-  };
-
   return (
     <div className={`sidebar ${isCollapsed ? "sidebar-collapsed" : ""}`}>
       {/* 프로젝트 헤더 */}
@@ -242,15 +238,24 @@ export const Sidebar = ({
       <div className="sidebar-navigation">
         {navigationItems.map((item) => {
           const isActive = activeItem === item.id;
+          const routeMap = {
+            roadmap: routes.roadmap(projectId),
+            board: routes.board(projectId),
+            calendar: routes.calendar(projectId),
+            issues: routes.issues(projectId),
+            release: routes.release(projectId),
+            backlog: routes.backlog(projectId),
+          };
+
           return (
-            <button
+            <NavButton
               key={item.id}
+              to={routeMap[item.id as keyof typeof routeMap]}
               className={`nav-item ${isActive ? "nav-item-active" : ""}`}
-              onClick={() => handleItemClick(item.id)}
             >
               <div className="nav-item-icon">{item.icon}</div>
               <span className="nav-item-label">{item.label}</span>
-            </button>
+            </NavButton>
           );
         })}
       </div>
