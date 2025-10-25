@@ -82,7 +82,7 @@ export const RoadMapPage = () => {
       name: "프로젝트 기초 설정",
       description: "프로젝트 구조 및 환경 설정",
       startDate: "2024-01-01",
-      endDate: "2024-02-01",
+      endDate: "2024-02-10",
       status: "completed",
       assignee: "김개발",
       color: "#10B981",
@@ -92,7 +92,7 @@ export const RoadMapPage = () => {
       name: "사용자 인증 시스템",
       description: "로그인/회원가입 기능 구현",
       startDate: "2024-02-01",
-      endDate: "2024-03-01",
+      endDate: "2024-02-15",
       status: "completed",
       assignee: "박백엔드",
       color: "#3B82F6",
@@ -189,18 +189,36 @@ export const RoadMapPage = () => {
     },
   ];
 
-  // 날짜를 픽셀 위치로 변환하는 함수 (동적 너비 적용)
+  // 날짜를 픽셀 위치로 변환하는 함수 (월과 일 모두 고려)
   const getDatePosition = (date: string): number => {
     const targetDate = new Date(date);
     const month = targetDate.getMonth(); // 0-11
-    return month * timelineDateWidth;
+    const day = targetDate.getDate(); // 1-31
+
+    // 월 단위 위치 + 일 단위 위치
+    const monthPosition = month * timelineDateWidth;
+    const dayPosition = (day - 1) * (timelineDateWidth / 30); // 하루당 픽셀
+
+    return monthPosition + dayPosition;
   };
 
-  // 에픽의 시작 위치와 너비 계산
+  // 에픽의 실제 기간(날짜 수)을 계산하는 함수
+  const getEpicDuration = (startDate: string, endDate: string): number => {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    const timeDiff = end.getTime() - start.getTime();
+    const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24)) + 1; // 시작일과 종료일 포함
+    return daysDiff;
+  };
+
+  // 에픽의 시작 위치와 너비 계산 (실제 기간 기반)
   const getEpicStyle = (epic: Epic) => {
     const startPos = getDatePosition(epic.startDate);
-    const endPos = getDatePosition(epic.endDate);
-    const width = endPos - startPos + timelineDateWidth;
+    const duration = getEpicDuration(epic.startDate, epic.endDate);
+
+    // 하루당 픽셀 계산 (한 달을 평균 30일로 가정)
+    const pixelsPerDay = timelineDateWidth / 30;
+    const width = duration * pixelsPerDay;
 
     return {
       marginLeft: `${startPos}px`,
