@@ -357,8 +357,8 @@ textarea.form-input-light:not(:placeholder-shown) + .form-label {
 
 /* 이슈 생성 폼 스타일 */
 .issue-create-form {
-  width: 800px;
-  max-width: 90vw;
+  width: 90vw;
+  padding: 0 var(--spacing-md);
 }
 
 .issue-form-content {
@@ -368,14 +368,15 @@ textarea.form-input-light:not(:placeholder-shown) + .form-label {
 }
 
 .issue-main-content {
-  flex: 7;
+  flex: 5;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
 }
 
 .issue-sidebar {
-  flex: 3;
+  flex: 1;
+  max-width: 220px;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);

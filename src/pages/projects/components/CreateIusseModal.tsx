@@ -1,5 +1,6 @@
 import { Modal } from "../../../components/ui/Modal";
 import { Button } from "../../../components/ui/Button";
+import { TextEditor } from "../../../components/ui/TextEditor";
 import { useState } from "react";
 import { ISSUE_TYPES } from "../../../utils/constants";
 
@@ -13,11 +14,17 @@ export const CreateIssueModal = ({
   onClose,
 }: CreateIssueModalProps) => {
   const [step, setStep] = useState(1);
+  const [description, setDescription] = useState("");
+
   const handleNextStep = () => {
     setStep(step + 1);
   };
   const handlePreviousStep = () => {
     setStep(step - 1);
+  };
+
+  const handleDescriptionChange = (content: string) => {
+    setDescription(content);
   };
   return (
     <Modal isOpen={isOpen} onClose={onClose} title="새 이슈 생성">
@@ -64,10 +71,11 @@ export const CreateIssueModal = ({
               </div>
               <div className="form-group">
                 <p className="form-label-text">설명</p>
-                <textarea
-                  className="form-textarea"
+                <TextEditor
                   placeholder="이슈에 대한 상세 설명을 입력하세요"
-                  rows={8}
+                  onChange={handleDescriptionChange}
+                  className="issue-description-editor"
+                  initialValue=""
                 />
               </div>
             </div>

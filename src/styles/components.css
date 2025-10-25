@@ -357,7 +357,7 @@
   background-color: var(--bg-secondary);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
-  max-width: 90%;
+  max-width: 95vw;
   width: max-content;
   max-height: 80vh;
   overflow-y: auto;
