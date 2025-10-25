@@ -1,11 +1,22 @@
+import { useState } from "react";
 import { Button } from "../../components/ui/Button";
-
+import { CreateModal } from "./components/CreateModal";
 export const ProjectsPage = () => {
+  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+
+  const handleCreateProject = (data: { thumbnail?: File }) => {
+    console.log("프로젝트 생성!", data);
+    if (data.thumbnail) {
+      console.log("썸네일 파일:", data.thumbnail.name);
+    }
+    setIsCreateModalOpen(false);
+  };
+
   return (
     <div className="projects-page">
       <div className="projects-header">
         <div className="projects-title-section">
-          <h1 className="projects-title">Projects</h1>
+          <h1 className="projects-title">프로젝트 목록</h1>
           <div className="search-container">
             <div className="search-input-wrapper">
               <svg
@@ -33,10 +44,10 @@ export const ProjectsPage = () => {
         <div className="create-button-container">
           <Button
             type="register"
-            onClick={() => {}}
+            onClick={() => setIsCreateModalOpen(true)}
             className="create-project-btn"
           >
-            Create project
+            새 프로젝트
           </Button>
         </div>
       </div>
@@ -73,6 +84,13 @@ export const ProjectsPage = () => {
           </tbody>
         </table>
       </div>
+
+      {/* 프로젝트 생성 모달 */}
+      <CreateModal
+        isOpen={isCreateModalOpen}
+        onClose={() => setIsCreateModalOpen(false)}
+        handleCreateProject={handleCreateProject}
+      />
     </div>
   );
 };

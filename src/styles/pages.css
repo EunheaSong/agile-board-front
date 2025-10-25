@@ -169,6 +169,32 @@
   color: var(--color-primary);
 }
 
+/* textarea 전용 스타일 */
+textarea.form-input-light {
+  height: 80px;
+  resize: none;
+  font-family: inherit;
+  line-height: 1.5;
+  padding-top: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+}
+
+/* textarea의 라벨은 항상 상단에 위치 */
+textarea.form-input-light + .form-label {
+  top: 0;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  color: var(--color-gray-500);
+}
+
+textarea.form-input-light:focus + .form-label,
+textarea.form-input-light:not(:placeholder-shown) + .form-label {
+  top: 0;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  color: var(--color-primary);
+}
+
 .page-container {
   min-height: 100vh;
   background-color: var(--color-gray-50);
