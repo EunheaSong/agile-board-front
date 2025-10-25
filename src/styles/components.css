@@ -333,7 +333,7 @@
 /* 사이드바 스타일 */
 .sidebar {
   width: 250px;
-  height: 100vh;
+  height: 100%; /* project-detail-page의 높이를 상속받음 */
   background-color: var(--bg-secondary);
   border-right: 1px solid var(--border-color);
   display: flex;
@@ -360,8 +360,8 @@
 }
 
 .project-icon {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background-color: var(--bg-tertiary);
   display: flex;
@@ -370,14 +370,14 @@
 }
 
 .project-icon-placeholder {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   background-color: var(--text-tertiary);
 }
 
 .project-name {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-lg);
   font-weight: var(--font-weight-medium);
   color: var(--text-primary);
 }

@@ -3,10 +3,28 @@
   /* 폰트 설정 */
   font-family: "Noto Sans KR", sans-serif;
   --font-size-base: 15px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 32px;
+  --font-size-4xl: 40px;
+  --font-size-5xl: 48px;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
+
+  /* 레이아웃 높이 */
+  --header-height: 85px; /* 헤더 높이 */
+  --content-height: calc(100vh - var(--header-height)); /* 콘텐츠 높이 */
+  --content-height-dynamic: calc(
+    100dvh - var(--header-height)
+  ); /* 동적 콘텐츠 높이 */
+  --content-height-small: calc(
+    100svh - var(--header-height)
+  ); /* 작은 뷰포트 콘텐츠 높이 */
 
   /* 메인 컬러 */
   --color-primary: #2f78c4; /* 파란색 */
