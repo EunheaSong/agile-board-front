@@ -395,6 +395,7 @@ textarea.form-input-light:not(:placeholder-shown) + .form-label {
   border-bottom: 1px solid var(--border-color);
   transition: background-color 0.2s ease-in-out;
   background-color: var(--bg-secondary);
+  cursor: pointer;
 }
 
 .table-row:hover {

@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "../../components/ui/Button";
 import { CreateModal } from "./components/CreateModal";
+import { routes } from "../../router/routes";
 
 export const ProjectsPage = () => {
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleCreateProject = (data: { thumbnail?: File }) => {
     console.log("프로젝트 생성!", data);
@@ -11,6 +14,10 @@ export const ProjectsPage = () => {
       console.log("썸네일 파일:", data.thumbnail.name);
     }
     setIsCreateModalOpen(false);
+  };
+
+  const handleProjectClick = (projectId: string) => {
+    navigate(routes.roadmap(projectId));
   };
 
   return (
@@ -64,19 +71,19 @@ export const ProjectsPage = () => {
             </tr>
           </thead>
           <tbody>
-            <tr className="table-row">
+            <tr className="table-row" onClick={() => handleProjectClick("1")}>
               <td className="table-cell">AgileBoard Web App</td>
               <td className="table-cell">ABWA</td>
               <td className="table-cell">Software</td>
               <td className="table-cell">김개발</td>
             </tr>
-            <tr className="table-row">
+            <tr className="table-row" onClick={() => handleProjectClick("2")}>
               <td className="table-cell name-cell">Mobile Dashboard</td>
               <td className="table-cell key-cell">MD</td>
               <td className="table-cell type-cell">Mobile</td>
               <td className="table-cell lead-cell">박디자인</td>
             </tr>
-            <tr className="table-row">
+            <tr className="table-row" onClick={() => handleProjectClick("3")}>
               <td className="table-cell name-cell">API Integration</td>
               <td className="table-cell key-cell">API</td>
               <td className="table-cell type-cell">Backend</td>

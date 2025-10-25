@@ -5,6 +5,12 @@ import { RegisterPage } from "../pages/auth/RegisterPage";
 import { ROUTES } from "../utils/constants";
 import { ProjectsPage } from "../pages/projects/Index";
 import { ProjectDetailPage } from "../pages/projects/Detail";
+import { RoadMapPage } from "../pages/projects/RoadMap";
+import { BoardPage } from "../pages/projects/Board";
+import { CalendarPage } from "../pages/projects/Calendar";
+import { IssuesPage } from "../pages/projects/Issues";
+import { ReleasePage } from "../pages/projects/Release";
+import { BacklogPage } from "../pages/projects/Backlog";
 
 export const router = createBrowserRouter([
   {
@@ -20,8 +26,38 @@ export const router = createBrowserRouter([
         element: <ProjectsPage />,
       },
       {
-        path: "projects/1",
+        path: "projects/:id",
         element: <ProjectDetailPage />,
+        children: [
+          {
+            index: true,
+            element: <RoadMapPage />,
+          },
+          {
+            path: "roadmap",
+            element: <RoadMapPage />,
+          },
+          {
+            path: "board",
+            element: <BoardPage />,
+          },
+          {
+            path: "calendar",
+            element: <CalendarPage />,
+          },
+          {
+            path: "issues",
+            element: <IssuesPage />,
+          },
+          {
+            path: "release",
+            element: <ReleasePage />,
+          },
+          {
+            path: "backlog",
+            element: <BacklogPage />,
+          },
+        ],
       },
       {
         path: "analytics",
