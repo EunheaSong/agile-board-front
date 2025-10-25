@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 interface Epic {
   id: string;
   name: string;
@@ -16,6 +18,33 @@ interface TimelineDate {
 }
 
 export const RoadMapPage = () => {
+  const [timelineDateWidth, setTimelineDateWidth] = useState(120);
+
+  // 컨테이너 너비와 타임라인 날짜 너비 계산
+  useEffect(() => {
+    const calculateWidths = () => {
+      const container = document.querySelector(".timeline-container");
+      if (container) {
+        const containerRect = container.getBoundingClientRect();
+        const availableWidth = containerRect.width - 200; // 에픽 정보 열 너비 제외
+        const baseTimelineWidth = 12 * 120; // 기본 타임라인 너비 (12개월 * 120px)
+
+        if (availableWidth > baseTimelineWidth) {
+          // 추가 공간을 12로 나누어 각 날짜에 분배
+          const extraWidth = availableWidth - baseTimelineWidth;
+          const additionalWidthPerMonth = extraWidth / 12;
+          setTimelineDateWidth(120 + additionalWidthPerMonth);
+        } else {
+          setTimelineDateWidth(120);
+        }
+      }
+    };
+
+    calculateWidths();
+    window.addEventListener("resize", calculateWidths);
+
+    return () => window.removeEventListener("resize", calculateWidths);
+  }, []);
   // 타임라인 날짜 생성 (2024년 1월-12월)
   const generateTimelineDates = (): TimelineDate[] => {
     const dates: TimelineDate[] = [];
@@ -160,18 +189,18 @@ export const RoadMapPage = () => {
     },
   ];
 
-  // 날짜를 픽셀 위치로 변환하는 함수 (월단위)
+  // 날짜를 픽셀 위치로 변환하는 함수 (동적 너비 적용)
   const getDatePosition = (date: string): number => {
     const targetDate = new Date(date);
     const month = targetDate.getMonth(); // 0-11
-    return month * 120; // 각 월당 120px
+    return month * timelineDateWidth;
   };
 
   // 에픽의 시작 위치와 너비 계산
   const getEpicStyle = (epic: Epic) => {
     const startPos = getDatePosition(epic.startDate);
     const endPos = getDatePosition(epic.endDate);
-    const width = endPos - startPos + 120; // 120px는 한 달당 너비
+    const width = endPos - startPos + timelineDateWidth;
 
     return {
       marginLeft: `${startPos}px`,
@@ -199,7 +228,7 @@ export const RoadMapPage = () => {
               <div
                 key={date.date}
                 className="timeline-date"
-                style={{ width: "120px" }}
+                style={{ width: `${timelineDateWidth}px` }}
               >
                 <div className="date-label">{date.label}</div>
               </div>
