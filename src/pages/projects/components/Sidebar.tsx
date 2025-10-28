@@ -51,69 +51,69 @@ export const Sidebar = ({
         </svg>
       ),
     },
-    {
-      id: "board",
-      label: "Board",
-      icon: (
-        <svg
-          width="26"
-          height="26"
-          viewBox="0 0 26 26"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M10.8333 3.25H3.25V10.8333H10.8333V3.25Z"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M22.75 3.25H15.1667V10.8333H22.75V3.25Z"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M22.75 15.1667H15.1667V22.75H22.75V15.1667Z"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M10.8333 15.1667H3.25V22.75H10.8333V15.1667Z"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      ),
-    },
-    {
-      id: "calendar",
-      label: "Calendar",
-      icon: (
-        <svg
-          width="26"
-          height="26"
-          viewBox="0 0 26 26"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M17.3333 2.16663V6.49996M8.66667 2.16663V6.49996M3.25 10.8333H22.75M5.41667 4.33329H20.5833C21.78 4.33329 22.75 5.30334 22.75 6.49996V21.6666C22.75 22.8632 21.78 23.8333 20.5833 23.8333H5.41667C4.22005 23.8333 3.25 22.8632 3.25 21.6666V6.49996C3.25 5.30334 4.22005 4.33329 5.41667 4.33329Z"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      ),
-    },
+    // {
+    //   id: "board",
+    //   label: "Board",
+    //   icon: (
+    //     <svg
+    //       width="26"
+    //       height="26"
+    //       viewBox="0 0 26 26"
+    //       fill="none"
+    //       xmlns="http://www.w3.org/2000/svg"
+    //     >
+    //       <path
+    //         d="M10.8333 3.25H3.25V10.8333H10.8333V3.25Z"
+    //         stroke="currentColor"
+    //         strokeWidth="1.5"
+    //         strokeLinecap="round"
+    //         strokeLinejoin="round"
+    //       />
+    //       <path
+    //         d="M22.75 3.25H15.1667V10.8333H22.75V3.25Z"
+    //         stroke="currentColor"
+    //         strokeWidth="1.5"
+    //         strokeLinecap="round"
+    //         strokeLinejoin="round"
+    //       />
+    //       <path
+    //         d="M22.75 15.1667H15.1667V22.75H22.75V15.1667Z"
+    //         stroke="currentColor"
+    //         strokeWidth="1.5"
+    //         strokeLinecap="round"
+    //         strokeLinejoin="round"
+    //       />
+    //       <path
+    //         d="M10.8333 15.1667H3.25V22.75H10.8333V15.1667Z"
+    //         stroke="currentColor"
+    //         strokeWidth="1.5"
+    //         strokeLinecap="round"
+    //         strokeLinejoin="round"
+    //       />
+    //     </svg>
+    //   ),
+    // },
+    // {
+    //   id: "calendar",
+    //   label: "Calendar",
+    //   icon: (
+    //     <svg
+    //       width="26"
+    //       height="26"
+    //       viewBox="0 0 26 26"
+    //       fill="none"
+    //       xmlns="http://www.w3.org/2000/svg"
+    //     >
+    //       <path
+    //         d="M17.3333 2.16663V6.49996M8.66667 2.16663V6.49996M3.25 10.8333H22.75M5.41667 4.33329H20.5833C21.78 4.33329 22.75 5.30334 22.75 6.49996V21.6666C22.75 22.8632 21.78 23.8333 20.5833 23.8333H5.41667C4.22005 23.8333 3.25 22.8632 3.25 21.6666V6.49996C3.25 5.30334 4.22005 4.33329 5.41667 4.33329Z"
+    //         stroke="currentColor"
+    //         strokeWidth="1.5"
+    //         strokeLinecap="round"
+    //         strokeLinejoin="round"
+    //       />
+    //     </svg>
+    //   ),
+    // },
     {
       id: "issues",
       label: "Issues",

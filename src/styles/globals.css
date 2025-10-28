@@ -222,3 +222,74 @@ button:disabled {
 .gap-10 {
   gap: 10px;
 }
+
+.mt-sm {
+  margin-top: var(--spacing-sm);
+}
+
+.mt-md {
+  margin-top: var(--spacing-md);
+}
+
+.md-sm {
+  margin-bottom: var(--spacing-sm);
+}
+.md-md {
+  margin-bottom: var(--spacing-md);
+}
+
+.pt-sm {
+  padding-top: var(--spacing-sm);
+}
+
+.pt-md {
+  padding-top: var(--spacing-md);
+}
+
+.pb-sm {
+  padding-bottom: var(--spacing-sm);
+}
+
+.pb-md {
+  padding-bottom: var(--spacing-md);
+}
+
+.issue-type-icon-BUG {
+  background: url("/bug2.png") no-repeat center center;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  /* display: inline-block; */
+}
+
+.issue-type-icon-task {
+  background: url("/task.png") no-repeat center center;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  /* display: inline-block; */
+}
+
+.issue-type-icon-epic {
+  background: url("/epic.png") no-repeat center center;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  /* display: inline-block; */
+}
+
+.issue-type-icon-story {
+  background: url("/story.png") no-repeat center center;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  /* display: inline-block; */
+}
+
+.issue-type-icon-subtask {
+  background: url("/subTask.png") no-repeat center center;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  /* display: inline-block; */
+}

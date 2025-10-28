@@ -6,7 +6,7 @@ import { ROUTES } from "../utils/constants";
 import { ProjectsPage } from "../pages/projects/Index";
 import { ProjectDetailPage } from "../pages/projects/Detail";
 import { RoadMapPage } from "../pages/projects/RoadMap";
-import { BoardPage } from "../pages/projects/Board";
+import { BoardPage } from "../pages/projects/components/Board";
 import { CalendarPage } from "../pages/projects/Calendar";
 import { IssuesPage } from "../pages/projects/Issues";
 import { ReleasePage } from "../pages/projects/Release";

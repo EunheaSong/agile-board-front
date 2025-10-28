@@ -70,7 +70,7 @@ export const CreateIssueModal = ({
                 />
               </div>
               <div className="form-group">
-                <p className="form-label-text">설명</p>
+                {/* <p className="form-label-text">설명</p> */}
                 <TextEditor
                   placeholder="이슈에 대한 상세 설명을 입력하세요"
                   onChange={handleDescriptionChange}

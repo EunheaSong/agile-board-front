@@ -277,7 +277,7 @@ textarea.form-input-light:not(:placeholder-shown) + .form-label {
 }
 
 .project-detail-header {
-  /* margin-bottom: var(--spacing-xl); */
+  margin-bottom: var(--spacing-xl);
 }
 
 .project-detail-title {
@@ -398,7 +398,7 @@ textarea.form-input-light:not(:placeholder-shown) + .form-label {
 .form-label {
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
-  color: var(--text-primary);
+  color: var(--text-tertiary);
 }
 
 .form-input {
@@ -473,6 +473,20 @@ textarea.form-input-light:not(:placeholder-shown) + .form-label {
 }
 
 .projects-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Issues 테이블 스타일 */
+.issues-table-container {
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+}
+
+.issues-table {
   width: 100%;
   border-collapse: collapse;
 }
@@ -744,7 +758,7 @@ textarea.form-input-light:not(:placeholder-shown) + .form-label {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
 }
 
 .kanban-board {
@@ -756,6 +770,7 @@ textarea.form-input-light:not(:placeholder-shown) + .form-label {
 .kanban-board-column {
   flex: 1;
   min-width: 300px;
+  max-width: 450px;
 }
 
 .kanban-board-content {
@@ -855,6 +870,44 @@ textarea.form-input-light:not(:placeholder-shown) + .form-label {
 
 .priority-low .line {
   background-color: #10b981; /* 초록색 - 낮은 우선순위 */
+}
+
+/* Issues 페이지 헤더 */
+.issues-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.issues-kanban {
+  margin-top: var(--spacing-md);
+}
+
+.issues-ui-filter {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.issues-ui-filter button {
+  border: none;
+  background: none;
+  padding: 5px 15px;
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all 0.2s ease-in-out;
+}
+
+.issues-ui-filter button:hover {
+  color: var(--text-primary);
+  background-color: var(--bg-tertiary);
+}
+
+.issues-ui-filter button.active {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  border-bottom: 2px solid var(--color-primary);
 }
 
 /* 반응형 디자인 */

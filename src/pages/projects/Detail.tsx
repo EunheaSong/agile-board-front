@@ -10,7 +10,7 @@ export const ProjectDetailPage = () => {
     if (path.includes("/roadmap")) return "로드맵";
     if (path.includes("/board")) return "칸반 보드";
     if (path.includes("/calendar")) return "캘린더";
-    if (path.includes("/issues")) return "이슈";
+    if (path.includes("/issues")) return "Issues";
     if (path.includes("/release")) return "릴리즈";
     if (path.includes("/backlog")) return "백로그";
     return "로드맵"; // 기본값
@@ -33,7 +33,9 @@ export const ProjectDetailPage = () => {
     <div className="project-detail-page">
       <Sidebar projectId={id} projectName="AgileBoard Web App" />
       <div className="project-detail-content">
-        <div className="project-detail-header">{getPageTitle()}</div>
+        {/* <div className="project-detail-header">
+          <h1>{getPageTitle()}</h1>
+        </div> */}
         <Outlet />
       </div>
     </div>
